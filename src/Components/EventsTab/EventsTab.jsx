@@ -1,73 +1,36 @@
 import './EventsTab.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Tabs from '../Tabs/Tabs';
+import Details from '../Details/Details';
+
+import TagsContainer from '../TagsContainer/TagsContainer';
 
 export default function EventsTab() {
-  const [toggleState, setToggleState] = useState(1);
+  const [toggleState, setToggleState] = useState(0);
+  const headings = ['All Events', 'Webinars', 'Coding Events', 'Bootcamp Events', 'Workshop'];
+  const [selected_tags, setSelection] = useState([])
 
-  const toggleTab = (index) => {
-    setToggleState(index);
-  };
+
+
+  function getCategory(num) {
+    if (num === 0) return 'ALL_EVENTS';
+    else if (num === 1) return 'WEBINARS';
+    else if (num === 2) return 'CODING_EVENT';
+    else if (num === 3) return 'BOOTCAMP_EVENT';
+    else return 'WORKSHOP';
+  }
 
   return (
-    <div className="container">
-      <div className="bloc-tabs">
-        <button
-          className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(1)}
-        >
-          All Events
-        </button>
-        <button
-          className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(2)}
-        >
-          Webinars
-        </button>
-
-        <button
-          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(3)}
-        >
-          Coding Events
-        </button>
-
-        <button
-          className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(4)}
-        >
-          Bootcamp Events
-        </button>
-
-        <button
-          className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
-          onClick={() => toggleTab(5)}
-        >
-          Workshops
-        </button>
-
-      </div>
-
-
-
-      <div className="content-tabs">
-        <div
-          className={toggleState === 1 ? "content  active-content" : "content"}
-        >
-          <h2>Content 1</h2>
-          <hr />
-          <p>
-            T1
-          </p>
-        </div>
-
-        <div
-          className={toggleState === 2 ? "content  active-content" : "content"}        >
-          <h2>Content 2</h2>
-          <hr />
-          <p>
-            T2
-          </p>
-        </div>
+    <div>
+      <Tabs
+        headings={headings}
+        cur_ind={toggleState}
+        setIndex={setToggleState}
+      />
+      <div id = 'display-area'>
+        Details tab comes here
+      {/* <Details category={getCategory(toggleState)} /> */}
+      <TagsContainer selected_tags = {selected_tags} setSelection={setSelection}/>
       </div>
     </div>
   );

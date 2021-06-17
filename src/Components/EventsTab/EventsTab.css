@@ -9,16 +9,17 @@
 
 .bloc-tabs {
     display: flex;
+    flex-direction: row;
 }
 
 .tabs {
-    margin: 0 20px;
-    padding: 10px;
+    padding: 0px 10px;
     text-align: center;
     outline: none;
     width: 300px;
     font-weight: 800;
     font-size: medium;
+    background-color: white;
   }
 
 
@@ -58,4 +59,9 @@ button {
 }
 .active-content {
   display: block;
+}
+
+#display-area {
+  display: flex;
+  flex-direction: row;
 }
