@@ -3,12 +3,10 @@ import React, { useEffect, useState } from 'react';
 import Tabs from '../Tabs/Tabs';
 import Details from '../Details/Details';
 
-import TagsContainer from '../TagsContainer/TagsContainer';
 
 export default function EventsTab() {
   const [toggleState, setToggleState] = useState(0);
   const headings = ['All Events', 'Webinars', 'Coding Events', 'Bootcamp Events', 'Workshop'];
-  const [selected_tags, setSelection] = useState([])
 
 
 
@@ -27,11 +25,7 @@ export default function EventsTab() {
         cur_ind={toggleState}
         setIndex={setToggleState}
       />
-      <div id = 'display-area'>
-        Details tab comes here
-      {/* <Details category={getCategory(toggleState)} /> */}
-      <TagsContainer selected_tags = {selected_tags} setSelection={setSelection}/>
-      </div>
+      <Details category={getCategory(toggleState)} />
     </div>
   );
 }
