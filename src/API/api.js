@@ -16,7 +16,7 @@ export async function getEvents(category, sub_category, tag_list, offset) {
         params: {
             event_category: category,
             event_sub_category: sub_category,
-            tag_list: tags, // Yeah this one gonna be a problem
+            tag_list: tags,
             offset: offset,
         }
     });

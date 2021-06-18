@@ -1,0 +1,39 @@
+.event-info-item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: 16px;
+}
+
+img {
+    width: 400px;
+    height: 150px;
+}    
+
+
+.item-label {
+    font-size: 14px;
+    color: rgba(28,28,28,.6);
+    margin:0px;
+    margin-left: 10px;
+}
+
+.card-info {
+    display:flex;
+    flex-direction: row;
+    border-bottom: #f3f3f3;
+}
+
+.item-value {
+    color: #212121;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card {
+    width: 400px;
+    padding-left: 20px;
+    margin: 20px 10px;
+    margin-right: 10px;
+    border: black;
+}

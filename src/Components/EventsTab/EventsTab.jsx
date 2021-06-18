@@ -8,8 +8,6 @@ export default function EventsTab() {
   const [toggleState, setToggleState] = useState(0);
   const headings = ['All Events', 'Webinars', 'Coding Events', 'Bootcamp Events', 'Workshop'];
 
-
-
   function getCategory(num) {
     if (num === 0) return 'ALL_EVENTS';
     else if (num === 1) return 'WEBINARS';
