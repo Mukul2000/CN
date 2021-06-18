@@ -4,20 +4,25 @@ import { getEvents } from '../../API/api';
 import './Details.css';
 import TagsContainer from '../TagsContainer/TagsContainer';
 import EventCard from '../EventCard/EventCard';
+import { Button } from 'react-bootstrap';
 
 
 export default function Details({ category }) {
     const [toggleState, setToggleState] = useState(0);
-    const headings = ['Upcoming', 'Archived', 'All Time Favorites'];
     const [site_events, setEvents] = useState([]);
     const [selected_tags, setSelection] = useState([])
+    const [page, setPage] = useState(1);
+
+    const resPerPage = 20;
+    const headings = ['Upcoming', 'Archived', 'All Time Favorites'];
+
 
 
     useEffect(() => {
-        getEvents(category, headings[toggleState], selected_tags, 0)
+        getEvents(category, headings[toggleState], selected_tags, page * resPerPage - resPerPage)
             .then(res => setEvents(res))
             .catch(e => console.log(e));
-    }, [toggleState, selected_tags, category]);
+    }, [toggleState, selected_tags, category, page]);
 
     return (
         <div>
@@ -29,16 +34,25 @@ export default function Details({ category }) {
                 cur_ind={toggleState}
                 setIndex={setToggleState}
             />
-            <div id='display-area'>
-            <TagsContainer selected_tags={selected_tags} setSelection={setSelection} />
+            <div id='tags-events-wrapper'>
+            <div id='events-area'>
+                
                 {site_events.map((site_event, ind) => {
                     return (
-                        <EventCard event={site_event} key={ind}/>
+                        <EventCard event={site_event} key={ind} />
                     );
                 })}
-              
             </div>
-            
+            <div id='tags-area'>
+            <TagsContainer selected_tags={selected_tags} setSelection={setSelection} />
+            </div>
+        </div>
+        <div id='paginator'>
+                {page > 1 && <Button variant='primary' onClick={(e) => setPage(page - 1)}> Previous </Button>}
+                <div id='page'> {page} </div>
+                
+                {site_events.length > 0 && <Button variant='primary' onClick={(e) => setPage(page + 1)}> Next </Button>}
+            </div>
         </div>
     )
 }

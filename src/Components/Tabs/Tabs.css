@@ -1,0 +1,49 @@
+.container {
+    border: 1px solid #e0e0e0;
+}
+
+#bloc-tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.active-tabs  {
+    background: white;
+    color: orangered; 
+}
+
+.tabs {
+    padding: 10px 10px;
+    text-align: center;
+    outline: none;
+    width: 400px;
+    font-weight: 800;
+    font-size: medium;
+    background-color: white;
+  }
+
+
+button {
+    border: none; 
+}
+
+.content-tabs {
+    flex-grow : 1;
+  }
+
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+}
+.active-content {
+  display: block;
+}

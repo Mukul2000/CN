@@ -1,8 +1,4 @@
- #outer-events-wrapper {
-    margin: 0 auto;
-  }
-  
-  #header {
+#header {
     height: 245px;
     padding-top: 73px;
     padding-left: 65px;
@@ -31,7 +27,6 @@
   
   #events-wrapper {
     font-weight: 400;
-    border: 1px solid #d0d0d0;
     background: #fff;
     border-radius: 6px;
     padding: 70px 120px

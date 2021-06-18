@@ -1,4 +1,8 @@
-.container {
+#main-wrapper {
+  border: 1px solid #e0e0e0;
+}
+
+/* .container {
     display: flex;
     flex-direction: column;
     padding: 20px 10px;
@@ -23,9 +27,6 @@
   }
 
 
-button {
-    border: none; 
-}
 
 .content {
     background: white;
@@ -37,26 +38,7 @@ button {
   background: white;
   border-bottom: 1px solid transparent;
   color: orangered;
-  width: 300px;
+
 }
 
-.content-tabs {
-    flex-grow : 1;
-  }
-
-.content h2 {
-  padding: 0px 0 5px 0px;
-}
-.content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
-}
-.content p {
-  width: 100%;
-  height: 100%;
-}
-.active-content {
-  display: block;
-}
+ */

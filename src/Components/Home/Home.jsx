@@ -9,12 +9,12 @@ export default function Home() {
                 <div id='header'>
                     <div id='header-text'> Events & News </div>
                     <div id='header-subtitle'> Learn, Compete & Grow
- </div>
+                    </div>
+                </div>
+                <div id='events-wrapper'>
+                    <EventsTab />
                 </div>
             </div>
-            <div id='events-wrapper'>
-                <EventsTab/>
-        </div>
         </div>
     );
 }

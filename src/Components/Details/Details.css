@@ -1,6 +1,22 @@
-#display-area {
+#events-area {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: #fefefe;
+}
+
+#paginator {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#page {
+    text-align: center;
+    display: inline;
+    margin: 0px 10px
+}
+
+#tags-events-wrapper {
+    display: flex;
+    flex-direction: row;
 }

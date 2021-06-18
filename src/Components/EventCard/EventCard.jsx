@@ -9,11 +9,11 @@ export default function EventCard(props) {
     }
 
     return (
-        <div className='shadow'>
+        <div>
         <div className="card">
             <img className="card-img-top" src={props.event.cover_picture} alt="Card image cap" />
             <div className="card-body">
-            <h3 className="card-title">{props.event.name}</h3>
+            <h5 className="card-title">{props.event.name}</h5>
                 <div className="card-info">
                 
                 <div className='event-info-item'>

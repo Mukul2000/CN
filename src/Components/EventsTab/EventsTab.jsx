@@ -17,7 +17,7 @@ export default function EventsTab() {
   }
 
   return (
-    <div>
+    <div id='main-wrapper'>
       <Tabs
         headings={headings}
         cur_ind={toggleState}
