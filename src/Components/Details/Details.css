@@ -1,8 +1,12 @@
 #events-area {
+    background-color: #fefefe;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: #fefefe;
+}
+
+#tags-area {
+    display: inline;
 }
 
 #paginator {
@@ -17,6 +21,5 @@
 }
 
 #tags-events-wrapper {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
 }

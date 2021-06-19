@@ -25,7 +25,7 @@ export default function Details({ category }) {
     }, [toggleState, selected_tags, category, page]);
 
     return (
-        <div>
+        <div id='detail-area'>
             {/* TODO: tabs inside this component should have less font-weight and stuff
              I can't figure out how to override
              styles of Tabs in this component, it just takes styles from the EventsTab components */}
@@ -35,22 +35,28 @@ export default function Details({ category }) {
                 setIndex={setToggleState}
             />
             <div id='tags-events-wrapper'>
-            <div id='events-area'>
-                
-                {site_events.map((site_event, ind) => {
-                    return (
-                        <EventCard event={site_event} key={ind} />
-                    );
-                })}
+                <div id='events-area'>
+
+                    {site_events.map((site_event, ind) => {
+                        if (ind <= resPerPage - 1) {
+                            return (
+                                <EventCard event={site_event} key={ind} />
+                            );
+                        }
+                        else return <div></div>
+                    })}
+                </div>
+
+                {/* Also can't figure out how to put this Tags component next to 
+                    the event details  */}
+                <div id='tags-area'>
+                    <TagsContainer selected_tags={selected_tags} setSelection={setSelection} />
+                </div>
             </div>
-            <div id='tags-area'>
-            <TagsContainer selected_tags={selected_tags} setSelection={setSelection} />
-            </div>
-        </div>
-        <div id='paginator'>
+            <div id='paginator'>
                 {page > 1 && <Button variant='primary' onClick={(e) => setPage(page - 1)}> Previous </Button>}
                 <div id='page'> {page} </div>
-                
+
                 {site_events.length > 0 && <Button variant='primary' onClick={(e) => setPage(page + 1)}> Next </Button>}
             </div>
         </div>

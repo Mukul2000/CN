@@ -6,7 +6,6 @@
 }
 
 img {
-    width: 400px;
     height: 150px;
 }    
 
@@ -35,8 +34,4 @@ img {
     padding-left: 20px;
     margin: 20px 10px;
     margin-right: 10px;
-}
-
-.shadow {
-    box-shadow: 10px;
 }
